@@ -1,5 +1,4 @@
-
-import './App.css';
+import Chai from './Chai';
 import React, { useState } from 'react';
 
 function App() {
@@ -17,14 +16,16 @@ function App() {
     setColor(color=>"yellow")
   }
   return (
+    <>
     <div style={{color:color}}>
-        <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, dolores saepe deleniti fugit excepturi blanditiis repellat ex quaerat doloremque mollitia ipsum, consectetur repudiandae, totam autem eos dolorum soluta quibusdam libero.</h3>
+        <h3>SHEKHAR TAYDE</h3>
         <button onClick={RED}>RED</button>
         <button onClick={BLUE}>BLUE</button>
         <button onClick={GREEN}>GREEN</button>
         <button onClick={YELLOW}>YELLOW</button>
     </div>
-
+    <Chai/>
+    </>
   );
 }
 
