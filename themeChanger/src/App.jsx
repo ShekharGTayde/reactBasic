@@ -22,9 +22,10 @@ function App() {
 
     document.querySelector('html').classList.add(themeMode)
   },[themeMode])
-
+//we need to wrap element from provider func and wrap those element who want you give to the access of context data,
+// and it need a value it means which props data do you give
   return (
-    <ThemeProvider value={{themeMode,ligthMode,darkMode}}>
+    <ThemeProvider value={{themeMode,ligthMode,darkMode}}> 
      
 <div className="flex flex-wrap w-full items-center">
                 <div className=" w-full ">
