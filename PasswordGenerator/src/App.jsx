@@ -10,15 +10,15 @@ const [charAllowed,setCharAllowed]=useState(false)
 const [password,setPassword]=useState("")
 
 
-const passwordGenerator = useCallback(()=>{
+const passwordGenerator = useCallback(()=>{  //it is used when our output is depend on multiple dependencies,it required call back func
   let pass=""
   let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
     if (numAllowed) str += "0123456789"
     if (charAllowed) str += "!@#$%^&*-_+=[]{}~`"
 
     for(let i=1;i<length;i++){
-      let num=Math.floor(Math.random() * str.length + 1)
-       pass += str.charAt(num)
+      let num=Math.floor(Math.random() * str.length + 1)  //it generate the random index no
+       pass += str.charAt(num) //stored at pass that random index no charactor
     }
     setPassword(pass)
 },[length,numAllowed,charAllowed])
@@ -28,11 +28,11 @@ useEffect(()=>{
 },[length,numAllowed,charAllowed])
 
 //ref hook for copy purpose
-const copyPass=useRef(null)
+const copyPass=useRef(null) //this hook is used to give a referance
 
 const PassCopy = useCallback(()=>{
-  copyPass.current?.select();
-  window.navigator.clipboard.writeText(password)
+  copyPass.current?.select();  //it is used to highlighte the selected text
+  window.navigator.clipboard.writeText(password)  //it is used to copy to clipboard
 },[setPassword])
 
   return (
